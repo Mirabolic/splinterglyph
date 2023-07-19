@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="splinterglyph",
     version=version,
-    scripts=["splinterglyph_encrypt", "splinterglyph_decrypt"],
+    scripts=["splinterglyph/splinterglyph_encrypt", "splinterglyph/splinterglyph_decrypt"],
     author="Bill Bradley",
     description="A tool for encrypting and decrypting files using distributed keys",
     long_description=long_description,
