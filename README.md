@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Usage
 ### Encryption
-Suppose you have a file called `plaintext`.  You could then run
+Suppose you have a file called `my_data` that you'd like to encrypt.  You could then run
 ```
 splinterglyph_encrypt my_data
 ```
