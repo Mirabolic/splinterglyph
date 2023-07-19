@@ -67,20 +67,6 @@ splinterglyph_decrypt -h
 ```
 to see all command line options; this includes an option to pass the key shares as a file (as opposed to the command line).
 
-## Encryption and Decryption Mode
-This module provides a set of tools for encrypting and decrypting files with
-a cryptovariable split into shares.
-
-In the encryption mode, suppose we have a plaintext file P.  The module
-produces an encrypted file E and divides the key into N key shares.  The key
-shares are designed so that any M shares are sufficient to decrypt E.
-
-In the decryption mode, given file E and M of the key shares the module can
-recover P.
-
-Note that the encryption digitally signs the data, so any modifications to E
-are detectable.
-
 ## Details
 
 There's two parts to this process: splitting a secret key and actually encrypting the file.  We split the key using [Shamir's secret sharing protocol](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing).  The code for this exists entirely within the Splinterglyph repository, but is shamelessly [stolen from Jonathan Queiroz' repo](https://github.com/jqueiroz/python-sslib).  The actual encryption is done using [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).  By default, the system uses 128-bit AES, but the `--key_bit_length` allows the user to upgrade that to 192 or 256 bit keys.
@@ -93,7 +79,7 @@ In addition to encryption/decryption, we also perform message authentication on 
 ##  FILE TAMPERING DETECTED  ##
 ###############################
 ```
-followed by a Python traceback.
+followed by a Python traceback.  The tampered file will not be decrypted.
 
 When you encrypt a file, a number of parameters get specified (like the AES encryption strength and the number of shares required to decrypt).  This metadata is stored as part of the encrypted file, so you no longer need to keep track of that.  If, however, you forget how many shares you need, a quick trick for recovering that is by examining the top of the encrypted file.  The first handful of bytes are human readable and look something like this:
 ```
