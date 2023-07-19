@@ -15,6 +15,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Mirabolic/splinterglyph",
     packages=setuptools.find_namespace_packages(),
+    package_data={'': ['words.txt']},
+    include_package_data=True,
     install_requires=["pycryptodome>=3.18.0"],
     classifiers=[
         "Programming Language :: Python :: 3",
