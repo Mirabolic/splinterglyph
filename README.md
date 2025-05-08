@@ -1,5 +1,7 @@
 # Splinterglyph
 
+<img src="https://github.com/user-attachments/assets/ae544b97-605c-4b15-b0ff-9a5e69a835e1" alt="Splinterglyph Emblem" width="600">
+
 ## Problem Statement
 Suppose we find ourselves in the following situation:
 >   You and four of your friends want to encrypt a file.  You each get one of
